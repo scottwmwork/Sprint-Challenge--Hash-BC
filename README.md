@@ -24,11 +24,32 @@ This sprint challenge is divided up into three parts:  Hash tables coding, block
 
 Explain in detail the workings of a dynamic array:
 * What is the runtime complexity to access an array, add or remove from the front, and add or remove from the back?
+	```
+    ANSWER:
+    - Access an array: O(1) (if you know the index)
+	- add or remove from the front: O(n)
+	- add or remove from the back: O(1) 
+    ```
+
 * What is the worse case scenario if you try to extend the storage size of a dynamic array?
 
+    ```
+    ANSWER:
+	If there is not a function to double the size and only extend the size by 1 to add the element. This will cause O(n) to occur everytime you need to insert once the capacity of the original array is full. 
+    ```
+
 Explain how a blockchain is structured. What are the blocks, what is the chain? How is the data organized?
- 
+
+    
+    ANSWER:
+	A blockchain is structured with a chain of blocks. The blocks are contained within a chain/list. A single Block contains usually a hash of the previous block, a timestamp, and transaction data. In order to add to the chain, compuations must be completed to find proof of work. 
+    
+
 Explain how proof of work functions. How does it operate. How does this protect the chain from attack. What kind of attack is possible?
+
+    ANSWER:
+	proof of work is where the mining is done to add transaction data. Usually the computation done in mining is trying and guessing of different combinations of numbers to meet a condition. The condition usually correlates to the last hash of the block or the last proof of work found. This proof of work must be done in order for a new transaction or new block to be placed on the chain. This protects against an attack where the same coin is used twice for a transaction since a long buffer time is needed in order to make a new transaction. Many different attacks are possible, one of them being the 51% attack, which is when a miner or a group of miners controls 51% or more of the mining power of the blockchain network.
+
 
 ## Project Set Up
 

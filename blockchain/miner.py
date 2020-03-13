@@ -19,13 +19,18 @@ def proof_of_work(last_proof):
     - p is the previous proof, and p' is the new proof
     - Use the same method to generate SHA-256 hashes as the examples in class
     """
+    
 
     start = timer()
 
     print("Searching for next proof")
-    proof = 0
+    proof = 2
+    import math 
     #  TODO: Your code here
-
+    while valid_proof(str(last_proof), str(proof)) is False:
+    	proof += math.log(proof)
+    	
+    
     print("Proof found: " + str(proof) + " in " + str(timer() - start))
     return proof
 
@@ -35,12 +40,18 @@ def valid_proof(last_hash, proof):
     Validates the Proof:  Multi-ouroborus:  Do the last six characters of
     the hash of the last proof match the first six characters of the hash
     of the new proof?
-
     IE:  last_hash: ...AE9123456, new hash 123456E88...
     """
 
     # TODO: Your code here!
-    pass
+    guess = hashlib.sha256(proof.encode())
+    guess_hash = guess.hexdigest()
+
+    last = hashlib.sha256(last_hash.encode())
+    last_hash = last.hexdigest()
+
+    return last_hash[len(last_hash)-6:] == guess_hash[:6]
+
 
 
 if __name__ == '__main__':
