@@ -28,14 +28,14 @@ Explain in detail the workings of a dynamic array:
     ANSWER:
     - Access an array: O(1) (if you know the index)
 	- add or remove from the front: O(n)
-	- add or remove from the back: O(1) 
+	- add or remove from the back: O(1) usually but sometimes O(n) when storage is full
     ```
 
 * What is the worse case scenario if you try to extend the storage size of a dynamic array?
 
     ```
     ANSWER:
-	If there is not a function to double the size and only extend the size by 1 to add the element. This will cause O(n) to occur everytime you need to insert once the capacity of the original array is full. 
+	The worst case scenario is if the storage size is completely full, the storage would be doulbed taking up a larger amount of memory
     ```
 
 Explain how a blockchain is structured. What are the blocks, what is the chain? How is the data organized?
